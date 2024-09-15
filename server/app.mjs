@@ -1,9 +1,12 @@
 import express from "express";
 import serverless from "serverless-http";
-import { AuthService } from "@genezio/auth";
+import {AuthService} from "@genezio/auth";
+import cors from "cors";
 
 const app = express();
 const secret = "Cats are the best!";
+
+app.use(cors());
 
 async function checkAuth(req, res, next) {
     try {

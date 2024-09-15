@@ -16,3 +16,25 @@ input {
 button {
     cursor: pointer;
 }
+
+.division {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100px;
+    margin: 10px auto;
+}
+
+.line-left, .line-right {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.or {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: bold;
+}

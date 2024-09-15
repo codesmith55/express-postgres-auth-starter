@@ -1,5 +1,5 @@
 # The name of the project.
-name: express-postgresql-starter
+name: express-auth-starter
 # The region where the project is deployed. Available regions: us-east-1, eu-central-1
 region: us-east-1
 # The version of the Genezio YAML configuration to parse.
@@ -45,11 +45,11 @@ services:
       email: true
       web3: true
       google:
-        clientId: ${{env.GOOGLE_CLIENT_ID}}
-        clientSecret: ${{env.GOOGLE_SECRET}}
+        clientId: "asd"
+        clientSecret: "asd"
     settings:
       resetPassword:
-        redirectUrl: https://${{frontend.<frontend-name>.subdomain}}.app.genez.io/reset-password
+        redirectUrl: https://${{frontend.express-auth-client.subdomain}}.app.genez.io/reset
 frontend:
   # The folder where the frontend scripts will run.
   path: ./client
@@ -67,4 +67,4 @@ frontend:
     VITE_API_URL: ${{ backend.functions.express-auth-starter.url }}
     VITE_AUTH_TOKEN: ${{services.authentication.token}}
     VITE_AUTH_REGION: ${{services.authentication.region}}
-  subdomain: sapphire-male-kingfisher
+    VITE_GOOGLE_CLIENT_ID: ${{services.authentication.providers.google.clientId}}

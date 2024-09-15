@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { AuthService } from "@genezio/auth";
+import {AuthService} from "@genezio/auth";
 
+// Create an axios instance
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL as string,
 });
