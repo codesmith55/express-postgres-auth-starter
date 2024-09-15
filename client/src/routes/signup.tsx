@@ -15,6 +15,7 @@ const Signup: React.FC = () => {
   const handleGoogleLogin = async (credentialResponse: CredentialResponse) => {
     setGoogleLoginLoading(true);
     try {
+      // Register the user with the Google credential
       await AuthService.getInstance().googleRegistration(
         credentialResponse.credential!
       );
@@ -32,6 +33,7 @@ const Signup: React.FC = () => {
     event.preventDefault();
     setLoading(true);
     try {
+      // Register the user with the email and password
       const response = await AuthService.getInstance().register(email, password, name);
       console.log('Register Success', response);
 

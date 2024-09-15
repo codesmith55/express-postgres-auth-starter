@@ -15,16 +15,19 @@ const SecretView: React.FC = () => {
       return;
     }
 
+    // Fetch the user details
     AuthService.getInstance().userInfo().then((user) => {
       setName(user.name!);
       setEmail(user.email!);
     }).catch((error) => {
+      navigate('/login');
       console.error(error);
     })
   }, []);
 
   const logout = async () => {
     try {
+      // Logout the user
       await AuthService.getInstance().logout();
       navigate('/login');
     } catch (error) {
@@ -37,7 +40,6 @@ const SecretView: React.FC = () => {
     setLoading(true);
     try {
       const response = await axios.get('/secret')
-      console.log(response.data);
       setSecret(`Secret ${response.data.message}`);
 
     } catch (error) {

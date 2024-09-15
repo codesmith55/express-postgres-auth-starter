@@ -45,11 +45,12 @@ services:
       email: true
       web3: true
       google:
-        clientId: "asd"
-        clientSecret: "asd"
+        clientId: {{env.GOOGLE_CLIENT_ID}}
+        clientSecret: {{env.GOOGLE_CLIENT_SECRET}}
     settings:
       resetPassword:
         redirectUrl: https://${{frontend.express-auth-client.subdomain}}.app.genez.io/reset
+
 frontend:
   # The folder where the frontend scripts will run.
   path: ./client
@@ -67,4 +68,4 @@ frontend:
     VITE_API_URL: ${{ backend.functions.express-auth-starter.url }}
     VITE_AUTH_TOKEN: ${{services.authentication.token}}
     VITE_AUTH_REGION: ${{services.authentication.region}}
-    VITE_GOOGLE_CLIENT_ID: ${{services.authentication.providers.google.clientId}}
+    VITE_GOOGLE_CLIENT_ID: {{services.authentication.providers.google.clientId}}

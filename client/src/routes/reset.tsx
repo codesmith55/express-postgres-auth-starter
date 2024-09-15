@@ -27,13 +27,25 @@ export default function ResetPasswordForm() {
   };
 
   return (
-    <div className="form-container">
+    <form className="form-container">
       <h2>Reset Password</h2>
-      <input type="password" placeholder="password" value={password1}
-             onChange={(e) => setPassword1(e.target.value)}/><br/>
-      <input type="password" placeholder="re-enter password" value={password2}
-             onChange={(e) => setPassword2(e.target.value)}/><br/>
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password1}
+          onChange={(e) => setPassword1(e.target.value)}/>
+      </div>
+      <div>
+        <label htmlFor="password">Confirm Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password2}
+          onChange={(e) => setPassword2(e.target.value)}/>
+      </div>
       <button onClick={reset}>Reset Password</button>
-    </div>
+    </form>
   );
 };

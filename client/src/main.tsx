@@ -8,7 +8,7 @@ import './index.css'
 import SecretView from './routes/secret';
 import Login from './routes/login';
 import Signup from './routes/signup';
-
+import ForgetPasswordForm from "./routes/forget.tsx";
 
 import {AuthService} from "@genezio/auth";
 import ResetPasswordForm from "./routes/reset.tsx";
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
     path: "/reset",
     element: <ResetPasswordForm/>,
   },
+  {
+    path: "/forgot-password",
+    element: <ForgetPasswordForm/>
+  }
 ]);
 
 

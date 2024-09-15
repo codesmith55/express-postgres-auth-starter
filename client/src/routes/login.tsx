@@ -90,6 +90,9 @@ const Login: React.FC = () => {
             onChange={e => setPassword(e.target.value)}
           />
         </div>
+        <label>
+          <a href="/forgot-password" style={{color:"white"}}>Forgot password?</a>
+        </label>
         <button type="submit">
           {loginLoading ? "Loading..." : "Login"}
         </button>
