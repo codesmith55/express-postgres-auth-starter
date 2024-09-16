@@ -52,18 +52,20 @@ services:
         redirectUrl: https://${{frontend.express-auth-client.subdomain}}.app.genez.io/reset
 
 frontend:
+  # The name of the frontend.
+  name: express-auth-client
   # The folder where the frontend scripts will run.
   path: ./client
   # Specifies information about the SDK generation. If not specified, the SDK will not be generated for this frontend.
   # The directory that will be published to the CDN. It is relative to the `path` directory.
   publish: ./dist
-  # Environment variables that will be injected into the frontend.
   scripts:
     # List of scripts to run before deploying the frontend.
     deploy: npm install
     start: npm run dev
     build:
       - npm run build
+  # Environment variables that will be injected into the frontend.
   environment:
     VITE_API_URL: ${{ backend.functions.express-auth-starter.url }}
     VITE_AUTH_TOKEN: ${{services.authentication.token}}
