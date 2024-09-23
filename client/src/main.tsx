@@ -12,7 +12,6 @@ import ForgetPasswordForm from "./routes/forget.tsx";
 
 import {AuthService} from "@genezio/auth";
 import ResetPasswordForm from "./routes/reset.tsx";
-import {GoogleOAuthProvider} from "@react-oauth/google";
 
 const authToken = import.meta.env.VITE_AUTH_TOKEN;
 const region = import.meta.env.VITE_AUTH_REGION;
@@ -45,8 +44,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
       <RouterProvider router={router}/>
-    </GoogleOAuthProvider>
   </React.StrictMode>,
 )
