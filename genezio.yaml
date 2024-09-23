@@ -66,3 +66,4 @@ frontend:
     VITE_API_URL: ${{ backend.functions.express-auth-starter.url }}
     VITE_AUTH_TOKEN: ${{services.authentication.token}}
     VITE_AUTH_REGION: ${{services.authentication.region}}
+  subdomain: aqua-tense-swan
