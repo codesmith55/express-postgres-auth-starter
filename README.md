@@ -16,12 +16,11 @@
 
 # Express Auth Starter
 
-This is a React starter kit that uses Genezio Auth for simple Email and Password login and Google login, and a PostgreSQL database to persist the data.
+This is a React starter kit that uses Genezio Auth for simple Email and Password login, and a PostgreSQL database to persist the data.
 
 ## Features 
 
 - Email + password login
-- Google login
 - PostgreSQL database
 - IAC (Infrastructure as Code) with Genezio
 - Deploy to Genezio with one click
@@ -31,8 +30,8 @@ This project have the following routes:
 - `/` - Secret page that requires authentication
 - `/login` - Login page with email + password and Google login
 - `/signUp` - Signup page with email + password and Google login
-- `/forgotPassword` - Forgot password page
-- `/resetPassword` - Reset password page
+- `/forget-password` - Forgot password page
+- `/reset` - Reset password page
 
 
 This project used Genezio IAC (Infrastructure as Code) to create the following resources:
@@ -40,14 +39,7 @@ This project used Genezio IAC (Infrastructure as Code) to create the following r
 - A Genezio Auth instance
 - A fullstack project with the React frontend and the Express backend
 
-To deploy this project to Genezio, you need to create a `.env` file with the following variables:
-
-```bash
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-```
-
-and just deploy the project to Genezio with one command:
+To deploy this project to Genezio, you need to run the following command:
 
 ```bash
 genezio deploy

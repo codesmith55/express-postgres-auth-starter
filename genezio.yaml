@@ -43,10 +43,6 @@ services:
       name: db-auth-starter
     providers:
       email: true
-      web3: true
-      google:
-        clientId: {{env.GOOGLE_CLIENT_ID}}
-        clientSecret: {{env.GOOGLE_CLIENT_SECRET}}
     settings:
       resetPassword:
         redirectUrl: https://${{frontend.express-auth-client.subdomain}}.app.genez.io/reset
@@ -70,4 +66,3 @@ frontend:
     VITE_API_URL: ${{ backend.functions.express-auth-starter.url }}
     VITE_AUTH_TOKEN: ${{services.authentication.token}}
     VITE_AUTH_REGION: ${{services.authentication.region}}
-    VITE_GOOGLE_CLIENT_ID: {{services.authentication.providers.google.clientId}}
