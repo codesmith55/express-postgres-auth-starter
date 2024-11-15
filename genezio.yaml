@@ -24,7 +24,7 @@ backend:
       # The entry point for the function.
       entry: app.mjs
       # The compatibility of the function handler.
-      type: aws
+      type: httpServer
   # Scripts are running in the specified `path` directory.
   scripts:
     # List of scripts to run before deploying the frontend.
